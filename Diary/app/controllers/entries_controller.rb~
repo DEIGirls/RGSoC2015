@@ -23,7 +23,7 @@ class EntriesController < ApplicationController
 	private
 	def entry_params
 	  params.require(:entry).permit(:title)
-	  params.require(:entry).permit(:description)
-	  params.require(:entry).permit(:author)
+		params.require(:entry).permit(:description)
+params.require(:entry).permit(:author)
 	end
 end
