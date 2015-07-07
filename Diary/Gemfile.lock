@@ -1,50 +1,3 @@
-GIT
-  remote: git://github.com/rspec/rspec-core.git
-  revision: 5bee47543e78cf769ee4812c3bf7c00a91765b3a
-  branch: master
-  specs:
-    rspec-core (3.4.0.pre)
-      rspec-support (= 3.4.0.pre)
-
-GIT
-  remote: git://github.com/rspec/rspec-expectations.git
-  revision: 76cbb6a5f1bfd44ca140de3293ab76f2a6ccdfab
-  branch: master
-  specs:
-    rspec-expectations (3.4.0.pre)
-      diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (= 3.4.0.pre)
-
-GIT
-  remote: git://github.com/rspec/rspec-mocks.git
-  revision: 6d5ecf3ecfb21bd50899ad16520926794b556295
-  branch: master
-  specs:
-    rspec-mocks (3.4.0.pre)
-      diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (= 3.4.0.pre)
-
-GIT
-  remote: git://github.com/rspec/rspec-rails.git
-  revision: d856f6436420bb16608f3137b7b01bed5db66458
-  branch: master
-  specs:
-    rspec-rails (3.4.0.pre)
-      actionpack (>= 3.0, < 4.3)
-      activesupport (>= 3.0, < 4.3)
-      railties (>= 3.0, < 4.3)
-      rspec-core (= 3.4.0.pre)
-      rspec-expectations (= 3.4.0.pre)
-      rspec-mocks (= 3.4.0.pre)
-      rspec-support (= 3.4.0.pre)
-
-GIT
-  remote: git://github.com/rspec/rspec-support.git
-  revision: f6846bd2df13df03fb9c33e86e61ff40238c8f62
-  branch: master
-  specs:
-    rspec-support (3.4.0.pre)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -89,6 +42,7 @@ GEM
     builder (3.2.2)
     byebug (5.0.0)
       columnize (= 0.9.0)
+    coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -104,6 +58,7 @@ GEM
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
+    interception (0.5)
     jbuilder (2.3.1)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -116,12 +71,24 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    method_source (0.8.2)
     mime-types (2.6.1)
     mini_portile (0.6.2)
     minitest (5.7.0)
     multi_json (1.11.2)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-nav (0.2.4)
+      pry (>= 0.9.10, < 0.11.0)
+    pry-rails (0.3.4)
+      pry (>= 0.9.10)
+    pry-rescue (1.4.2)
+      interception (>= 0.5)
+      pry
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -151,6 +118,23 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
+    rspec-core (3.3.1)
+      rspec-support (~> 3.3.0)
+    rspec-expectations (3.3.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.3.0)
+    rspec-mocks (3.3.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.3.0)
+    rspec-rails (3.3.2)
+      actionpack (>= 3.0, < 4.3)
+      activesupport (>= 3.0, < 4.3)
+      railties (>= 3.0, < 4.3)
+      rspec-core (~> 3.3.0)
+      rspec-expectations (~> 3.3.0)
+      rspec-mocks (~> 3.3.0)
+      rspec-support (~> 3.3.0)
+    rspec-support (3.3.0)
     sass (3.4.15)
     sass-rails (5.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -161,6 +145,13 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    shoulda (3.5.0)
+      shoulda-context (~> 1.0, >= 1.0.1)
+      shoulda-matchers (>= 1.4.1, < 3.0)
+    shoulda-context (1.2.1)
+    shoulda-matchers (2.8.0)
+      activesupport (>= 3.0.0)
+    slop (3.6.0)
     spring (1.3.6)
     sprockets (3.2.0)
       rack (~> 1.0)
@@ -193,14 +184,14 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
+  pry-nav
+  pry-rails
+  pry-rescue
   rails (= 4.2.3)
-  rspec-core!
-  rspec-expectations!
-  rspec-mocks!
-  rspec-rails!
-  rspec-support!
+  rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  shoulda
   spring
   sqlite3
   turbolinks
