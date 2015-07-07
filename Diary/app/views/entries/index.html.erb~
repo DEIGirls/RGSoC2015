@@ -17,15 +17,15 @@
 	<%= form_for(@new_entry) do |f| %>  
           <div class="field"> 
             	<%= f.label :Title %><br> 
-            	<%= f.text_area :title %> 
+            	<%= f.text_area :title %><br> 
 		<%= f.label :Description %><br> 
-            	<%= f.text_area :description %> 
+            	<%= f.text_area :description %> <br>
 		<%= f.label :By %><br> 
-            	<%= f.text_area :author %> 
+            	<%= f.text_area :author %> <br>
           </div> 
           <div class="actions"> 
-            <%= f.submit "Post" %> 
+            <%= f.submit "Create" %> 
           </div> 
-        <% end %>       
-      </div>
-    </div>
+        <% end %>
+</div>
+</div>

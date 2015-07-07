@@ -6,9 +6,8 @@ class EntriesController < ApplicationController
 	  
 	def create 
 	    	@new_entry = Entry.new(entry_params) 
-	    	if @new_entry.save 
-	    		redirect_to '/index' 
-		end
+    		@new_entry.save 
+		redirect_to root_path 
 	end
 
 	def update
@@ -22,8 +21,6 @@ class EntriesController < ApplicationController
 
 	private
 	def entry_params
-	  params.require(:entry).permit(:title)
-	  params.require(:entry).permit(:description)
-	  params.require(:entry).permit(:author)
+	  params.require(:entry).permit(:title, :description, :author)
 	end
 end
