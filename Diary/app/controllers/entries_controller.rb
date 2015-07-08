@@ -8,10 +8,6 @@ class EntriesController < ApplicationController
 		@new_entry = Entry.new
 	end
 
-	def edit_entry
-		@entry = Entry.find(params[:id])
-	end
-	
 	def create 
 		@new_entry = Entry.new(entry_params) 
     	@new_entry.save 
@@ -23,9 +19,12 @@ class EntriesController < ApplicationController
 		@entry.delete
 		redirect_to '/admin'
 	end
+
+	def edit_entry
+		@entry = Entry.find(params[:id])
+	end
 	
 	def update
-		puts "oi"
 		@entry = Entry.find(params[:id])
 		@entry.update(entry_params)
 		redirect_to '/admin'
