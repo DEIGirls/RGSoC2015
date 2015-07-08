@@ -1,0 +1,50 @@
+<div  ="header">
+	<div class="container">
+	<h1>DEIGirls Diary</h1>
+	</div>
+</div>
+<div class="main">
+	<div class="container">
+		<h2> New entry </h2><br>
+		<%= form_for(@new_entry) do |f| %>
+			<div class="field"> 
+				<%= f.label :Title %>        
+					<%= f.text_area :title %><br> 
+				<%= f.label :Description %>  
+					<%= f.text_area :description %> <br>
+				<%= f.label :By %>           
+					<%= f.text_area :author %> <br>
+			</div> 
+			<div class="actions"> 
+				<%= f.submit "Post" %> 
+			</div> 
+		<% end %>
+	</div>
+
+	<div class="container">
+		<h2>Past entries</h2>
+		<table style="width:100%">
+			<td>Author</td>
+			<td>Date</td>
+			<td>Title</td>
+			<td>Description</td>
+			<td>Update</td>
+			<td>Delete</td>
+			<ul class="comments">
+				<% @all_entries.each do |p| %>
+					<tr>
+						<td><%=p.author%></td>
+						<td><%=p.created_at %></td>
+						<td><%=p.title %></td>
+						<td><%= p.description%></td>
+						<td></td>
+						<td></td>
+					</tr>
+				<% end %>
+			</ul> 
+        </table> 
+    </div>
+</div>
+
+
+
