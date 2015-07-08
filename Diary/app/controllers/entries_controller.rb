@@ -10,12 +10,17 @@ class EntriesController < ApplicationController
 		redirect_to '/admin'
 	end
 
-	def update
-	    	
-	end
-
 	def delete
+		@entry = Entry.find(params[:id])
+		@entry.delete
+		redirect_to '/admin'
+	end
 	
+	def update
+		puts "oi"
+		@entry = Entry.find(params[:id])
+		@entry.update(entry_params)
+		redirect_to '/admin'
 	end
 	
 	private

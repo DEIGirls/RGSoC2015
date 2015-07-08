@@ -8,15 +8,15 @@
 		<h2> New entry </h2><br>
 		<%= form_for(@new_entry) do |f| %>
 			<div class="field"> 
-				<%= f.label :Title %>        
-					<%= f.text_area :title %><br> 
-				<%= f.label :Description %>  
-					<%= f.text_area :description %> <br>
-				<%= f.label :By %>           
-					<%= f.text_area :author %> <br>
+				<%= f.label :Title %><br>
+					<%= f.text_area :title %><br><br>
+				<%= f.label :Description %><br>
+					<%= f.text_area :description %> <br><br>
+				<%= f.label :By %><br>
+					<%= f.text_area :author %> <br><br>
 			</div> 
 			<div class="actions"> 
-				<%= f.submit "Post" %> 
+				<%= f.submit "Batatas" %> 
 			</div> 
 		<% end %>
 	</div>
@@ -37,8 +37,8 @@
 						<td><%=p.created_at %></td>
 						<td><%=p.title %></td>
 						<td><%= p.description%></td>
-						<td></td>
-						<td></td>
+						<td><%= button_to "Update", entry_path(p) %></td>
+						<td><%= button_to "Delete", entry_delete_path(p) %>  </td>
 					</tr>
 				<% end %>
 			</ul> 
