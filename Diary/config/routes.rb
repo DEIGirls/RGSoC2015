@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
 	root 'entries#index'
-	get '/admin' => 'admin#admin'
+	get '/admin' => 'admin#admin', as: :admin
+  post '/admin/add_entry' => 'entries#add_entry', as: :entry_add_entry
 	post '/admin/delete/:id' => 'entries#delete', as: :entry_delete 
-	post '/admin/:id' => 'edit_entry#edit_entry', as: :entry
+	post '/admin/:id' => 'entries#edit_entry', as: :entry
 	patch '/admin/:id' => 'entries#update', as: :entry_update
 	resources:entries
 	

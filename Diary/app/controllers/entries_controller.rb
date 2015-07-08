@@ -3,6 +3,14 @@ class EntriesController < ApplicationController
 		@new_entry = Entry.new
 		@all_entries = Entry.order(created_at: :desc).all
 	end
+
+	def add_entry
+		@new_entry = Entry.new
+	end
+
+	def edit_entry
+		@entry = Entry.find(params[:id])
+	end
 	
 	def create 
 		@new_entry = Entry.new(entry_params) 
