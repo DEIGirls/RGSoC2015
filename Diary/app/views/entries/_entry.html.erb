@@ -2,3 +2,4 @@
 <p><%= entry.created_at %> by <%= entry.author %></p>
 <p><%= entry.description%> </p>
 <%= link_to 'Delete this', entry_path(entry), method: :delete, data: { confirm: 'Really? '} %>
+<%= link_to 'Update this', edit_entry_path(entry)%>

@@ -1,0 +1,8 @@
+<%= f.label :title %><br>
+<%= f.text_area :title %><br><br>
+<%= f.label :description %><br>
+<%= f.text_area :description %> <br><br>
+<%= f.label :author %><br>
+<%= f.text_area :author %> <br><br>
+<%= link_to 'Update this', entry_path(entry), method: :update, data: { confirm: 'Really? '} %>
+

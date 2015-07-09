@@ -193,7 +193,6 @@ DEPENDENCIES
   pry-nav
   pry-rails
   pry-rescue
-  rack
   rails (= 4.2.3)
   rspec-rails
   sass-rails (~> 5.0)
