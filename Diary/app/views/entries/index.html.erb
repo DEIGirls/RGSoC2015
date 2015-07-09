@@ -1,21 +1,13 @@
     <div class="header">
       <div class="container">
         <h1>DEIGirls Diary</h1>
+        <%= link_to 'Add entry', new_entry_path %>
       </div>
     </div>
 
-  <%= link_to "Admin area", admin_path %>
-  
     <div class="main">
       <div class="container">
         <ul class="comments">
-          <% @all_entries.each do |p| %>
-          	<h3><%= p.title %></h3>
-		<p><%=p.created_at %> by <%=p.author %></p>
-		<p><%= p.description%> </p>
-          <% end %>
-        </ul> 
+          <%= render partial: 'entries/entry', collection: @entries %>
+        </ul>
      </div>
-
-
-
