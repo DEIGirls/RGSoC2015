@@ -10,7 +10,8 @@ private
 
 	def authenticate
 		authenticate_or_request_with_http_basic do |u,p|
-			u == 'Rosa' && p =='banana' || u == 'Ines' && p == 'morango'
+			u == 'Rosa' && ActiveSupport::SecurityUtils.secure_compare(p, 'banana') || 
+			u == 'Ines' && ActiveSupport::SecurityUtils.secure_compare(p, 'morango')
 		end
 	end
 

@@ -10,12 +10,12 @@
 			<%= f.object.errors.full_messages.join(', ') %>
 
 			<div class="field">
-				<%= f.label :title %><br>
-					<%= f.text_field :title %><br><br>
-				<%= f.label :description %><br>
+				<%= f.label :title %> <br>
+					<%= f.text_field :title %> <br><br>
+				<%= f.label :description %> <br>
 					<%= f.text_area :description %> <br><br>
-				<%= f.label :author, 'By' %><br>
-					<%= f.text_area :author %> <br><br>
+				<%= f.label :author %> <br>
+					<%= f.select(:author, ['Ines', 'Rosa'], :selected => "Ines") %> <br><br>
 			</div>
 			<div class="actions">
 				<%= f.submit "Add" %>
