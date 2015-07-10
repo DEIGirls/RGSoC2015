@@ -1,3 +1,0 @@
-== README
-
-This project contains a Diary application on Ruby on Rails to register our daily logs while working on Rails Girls Summer of Code 2015.
